@@ -16,9 +16,10 @@
   div[style*="grid-template-columns:1fr 1fr 1fr 1fr;"] {
     grid-template-columns: 1fr 1fr !important;
   }
-  /* 3-column grids → 1 column (3 in 2 cols leaves an orphan, looks bad) */
+  /* 3-column grids → stay 3 across (compact metric cards) */
   div[style*="grid-template-columns:1fr 1fr 1fr;"] {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: 1fr 1fr 1fr !important;
+    gap: 8px !important;
   }
   /* 2-column grids → 1 column (city sections, etc.) */
   div[style*="grid-template-columns:1fr 1fr;"] {
@@ -60,6 +61,10 @@
   div[style*="padding:24px 28px"] { padding: 12px 10px !important; }
   .ntab { padding: 10px 9px !important; font-size: 9px !important; }
   [id^="map-"] { height: 260px !important; }
+  /* On very small phones 3-col gets too tight, drop to 1 col */
+  div[style*="grid-template-columns:1fr 1fr 1fr;"] {
+    grid-template-columns: 1fr !important;
+  }
 }
 </style>
 </head>
