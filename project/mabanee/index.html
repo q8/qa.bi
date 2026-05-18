@@ -12,10 +12,16 @@
 <style>
 /* ---------- Mobile responsive overrides (≤ 760px) ---------- */
 @media (max-width: 760px) {
-  /* Stack any multi-column grid to single column */
-  div[style*="grid-template-columns:1fr 1fr 1fr 1fr"],
-  div[style*="grid-template-columns:1fr 1fr 1fr"],
-  div[style*="grid-template-columns:1fr 1fr"] {
+  /* 4-column grids → 2x2 (preserves density on phones) */
+  div[style*="grid-template-columns:1fr 1fr 1fr 1fr;"] {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  /* 3-column grids → 1 column (3 in 2 cols leaves an orphan, looks bad) */
+  div[style*="grid-template-columns:1fr 1fr 1fr;"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* 2-column grids → 1 column (city sections, etc.) */
+  div[style*="grid-template-columns:1fr 1fr;"] {
     grid-template-columns: 1fr !important;
   }
   /* Filter "label : control" row stacks vertically */
