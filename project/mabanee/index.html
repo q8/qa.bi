@@ -9,6 +9,53 @@
   Format example: v1.0.0 · May 26
   Only one occurrence to update — see the footer at the end of the body.
 -->
+<style>
+/* ---------- Mobile responsive overrides (≤ 760px) ---------- */
+@media (max-width: 760px) {
+  /* Stack any multi-column grid to single column */
+  div[style*="grid-template-columns:1fr 1fr 1fr 1fr"],
+  div[style*="grid-template-columns:1fr 1fr 1fr"],
+  div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  /* Filter "label : control" row stacks vertically */
+  div[style*="grid-template-columns:80px 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 4px 0 !important;
+  }
+  /* Maps shorter on phones */
+  [id^="map-"] { height: 320px !important; }
+  /* Edge-to-edge root container (drop side border + radius for phone look) */
+  body > div[style*="border:1px solid #d8e8e3"] {
+    border-left: none !important;
+    border-right: none !important;
+    border-radius: 0 !important;
+  }
+  /* Header padding tighter */
+  div[style*="padding:24px 28px"] { padding: 16px 14px !important; }
+  /* Content-panel padding tighter */
+  div[style*="padding:24px;background:#fbfdfc"] { padding: 14px !important; }
+  /* Tab bar: allow wrap; compact tab buttons */
+  #tabs { flex-wrap: wrap !important; }
+  .ntab { padding: 11px 13px !important; font-size: 10px !important; letter-spacing: 0.5px !important; }
+  /* Wide tables become horizontally scrollable instead of overflowing */
+  table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  table thead, table tbody, table tr { display: table; width: 100%; table-layout: fixed; }
+  /* Cards/section padding tighter */
+  div[style*="padding:20px"] { padding: 14px !important; }
+  div[style*="padding:18px 22px"] { padding: 14px !important; }
+  /* Shrink the giant metric numbers a touch */
+  div[style*="font-size:22px;font-weight:300"] { font-size: 18px !important; }
+  /* Reduce horizontal hero title size */
+  div[style*="font-size:22px;font-weight:300;letter-spacing:0.5px"] { font-size: 18px !important; }
+}
+/* ---------- Tighter breakpoint (≤ 420px) ---------- */
+@media (max-width: 420px) {
+  div[style*="padding:24px 28px"] { padding: 12px 10px !important; }
+  .ntab { padding: 10px 9px !important; font-size: 9px !important; }
+  [id^="map-"] { height: 260px !important; }
+}
+</style>
 </head>
 <body style="margin:0;padding:0;">
 
