@@ -1,14 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mabanee — Strategic Landscape</title>
+<!--
+  VERSION: bump on each release using semver (vMAJOR.MINOR.PATCH) plus month-year of the update.
+  Format example: v1.0.0 · May 26
+  Only one occurrence to update — see the footer at the end of the body.
+-->
+</head>
+<body style="margin:0;padding:0;">
+
 <div style="background:#ffffff;color:#1a1a1a;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;padding:0;border-radius:6px;border:1px solid #d8e8e3;overflow:hidden;">
 
-<div style="background:#ffffff;padding:24px 28px;border-bottom:3px solid #2a8b7a;display:flex;justify-content:space-between;align-items:flex-end;">
-  <div>
-    <div style="font-size:11px;letter-spacing:2px;color:#2a8b7a;text-transform:uppercase;margin-bottom:6px;font-weight:500;">Mabanee Company K.P.S.C.</div>
-    <div style="font-size:22px;font-weight:300;letter-spacing:0.5px;color:#1a1a1a;">Strategy Workspace</div>
-  </div>
-  <div style="text-align:right;font-size:10px;color:#6b8b85;line-height:1.7;">
-    <div style="color:#2a8b7a;font-weight:500;letter-spacing:1px;text-transform:uppercase;">Fiscal Year 2025</div>
-    <div>Listed · Boursa Kuwait · Premier Market</div>
-  </div>
+<div style="background:#ffffff;padding:24px 28px;border-bottom:3px solid #2a8b7a;">
+  <div style="font-size:11px;letter-spacing:2px;color:#2a8b7a;text-transform:uppercase;margin-bottom:6px;font-weight:500;">Mabanee Company K.P.S.C.</div>
+  <div style="font-size:22px;font-weight:300;letter-spacing:0.5px;color:#1a1a1a;">Strategic Landscape</div>
 </div>
 
 <div id="tabs" style="display:flex;background:#f4faf8;border-bottom:1px solid #d8e8e3;">
@@ -135,7 +143,6 @@
       <tr style="border-top:2px solid #2a8b7a;background:#f4faf8;"><td style="padding:13px 14px 13px 0;font-weight:500;color:#2a8b7a;">Waleed Khaled Alsharian</td><td style="padding:13px 14px;color:#2a8b7a;font-weight:500;">Chief Executive Officer</td><td style="padding:13px 0 13px 14px;color:#2a8b7a;">Investment Committee · 20-year tenure</td></tr>
     </tbody>
   </table>
-  <div style="font-size:11px;color:#6b8b85;margin-top:12px;font-style:italic;">Average board tenure: 20.1 years. Average management tenure: 7.6 years.</div>
 </div>
 
 </div>
@@ -157,14 +164,39 @@
   </div>
 </div>
 
-<div style="margin-bottom:20px;display:flex;gap:8px;align-items:center;font-size:11px;flex-wrap:wrap;">
-  <span style="color:#6b8b85;letter-spacing:1px;text-transform:uppercase;font-size:10px;font-weight:500;">Filter by:</span>
-  <button data-filter="all" class="pfilter" style="background:#2a8b7a;color:#ffffff;border:1px solid #2a8b7a;padding:6px 16px;font-family:inherit;font-size:11px;cursor:pointer;border-radius:3px;font-weight:500;">All projects</button>
-  <button data-filter="KWT" class="pfilter" style="background:transparent;color:#2a8b7a;border:1px solid #7cc4b3;padding:6px 16px;font-family:inherit;font-size:11px;cursor:pointer;border-radius:3px;">Kuwait</button>
-  <button data-filter="KSA" class="pfilter" style="background:transparent;color:#2a8b7a;border:1px solid #7cc4b3;padding:6px 16px;font-family:inherit;font-size:11px;cursor:pointer;border-radius:3px;">Saudi Arabia</button>
-  <button data-filter="BHR" class="pfilter" style="background:transparent;color:#2a8b7a;border:1px solid #7cc4b3;padding:6px 16px;font-family:inherit;font-size:11px;cursor:pointer;border-radius:3px;">Bahrain</button>
-  <button data-filter="OPS" class="pfilter" style="background:transparent;color:#2a8b7a;border:1px solid #7cc4b3;padding:6px 16px;font-family:inherit;font-size:11px;cursor:pointer;border-radius:3px;">Operating</button>
-  <button data-filter="DEV" class="pfilter" style="background:transparent;color:#2a8b7a;border:1px solid #7cc4b3;padding:6px 16px;font-family:inherit;font-size:11px;cursor:pointer;border-radius:3px;">Under development</button>
+<div style="margin-bottom:20px;background:#f4faf8;border:1px solid #d8e8e3;border-radius:4px;padding:14px 16px;font-size:11px;">
+  <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
+    <span style="color:#2a8b7a;letter-spacing:1.5px;text-transform:uppercase;font-size:10px;font-weight:600;">Filter pipeline</span>
+    <span style="color:#6b8b85;font-size:10px;"><span id="pcount">13</span> of 13 projects shown · <button id="pfreset" type="button" style="background:transparent;border:none;color:#2a8b7a;cursor:pointer;font-family:inherit;font-size:10px;text-decoration:underline;padding:0;">reset all</button></span>
+  </div>
+  <div style="display:grid;grid-template-columns:80px 1fr;gap:6px 12px;align-items:center;">
+    <span style="color:#6b8b85;letter-spacing:1px;text-transform:uppercase;font-size:10px;font-weight:500;">Country</span>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;">
+      <button data-group="geo" data-flag="KWT" class="pfilter" style="background:transparent;color:#2a8b7a;border:1px solid #7cc4b3;padding:5px 12px;font-family:inherit;font-size:11px;cursor:pointer;border-radius:3px;">Kuwait</button>
+      <button data-group="geo" data-flag="KSA" class="pfilter" style="background:transparent;color:#2a8b7a;border:1px solid #7cc4b3;padding:5px 12px;font-family:inherit;font-size:11px;cursor:pointer;border-radius:3px;">Saudi Arabia</button>
+      <button data-group="geo" data-flag="BHR" class="pfilter" style="background:transparent;color:#2a8b7a;border:1px solid #7cc4b3;padding:5px 12px;font-family:inherit;font-size:11px;cursor:pointer;border-radius:3px;">Bahrain</button>
+    </div>
+    <span style="color:#6b8b85;letter-spacing:1px;text-transform:uppercase;font-size:10px;font-weight:500;">Status</span>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;">
+      <button data-group="status" data-flag="OPS" class="pfilter" style="background:transparent;color:#2a8b7a;border:1px solid #7cc4b3;padding:5px 12px;font-family:inherit;font-size:11px;cursor:pointer;border-radius:3px;">Operating</button>
+      <button data-group="status" data-flag="DEV" class="pfilter" style="background:transparent;color:#2a8b7a;border:1px solid #7cc4b3;padding:5px 12px;font-family:inherit;font-size:11px;cursor:pointer;border-radius:3px;">Under development</button>
+    </div>
+    <span style="color:#6b8b85;letter-spacing:1px;text-transform:uppercase;font-size:10px;font-weight:500;">Asset</span>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;">
+      <button data-group="type" data-flag="MALL" class="pfilter" style="background:transparent;color:#2a8b7a;border:1px solid #7cc4b3;padding:5px 12px;font-family:inherit;font-size:11px;cursor:pointer;border-radius:3px;">Shopping mall</button>
+      <button data-group="type" data-flag="HOTEL" class="pfilter" style="background:transparent;color:#2a8b7a;border:1px solid #7cc4b3;padding:5px 12px;font-family:inherit;font-size:11px;cursor:pointer;border-radius:3px;">Hotel / hospitality</button>
+      <button data-group="type" data-flag="RES" class="pfilter" style="background:transparent;color:#2a8b7a;border:1px solid #7cc4b3;padding:5px 12px;font-family:inherit;font-size:11px;cursor:pointer;border-radius:3px;">Residential</button>
+      <button data-group="type" data-flag="MIXED" class="pfilter" style="background:transparent;color:#2a8b7a;border:1px solid #7cc4b3;padding:5px 12px;font-family:inherit;font-size:11px;cursor:pointer;border-radius:3px;">Mixed-use</button>
+    </div>
+    <span style="color:#6b8b85;letter-spacing:1px;text-transform:uppercase;font-size:10px;font-weight:500;">Delivers</span>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;">
+      <button data-group="eta" data-flag="DONE" class="pfilter" style="background:transparent;color:#2a8b7a;border:1px solid #7cc4b3;padding:5px 12px;font-family:inherit;font-size:11px;cursor:pointer;border-radius:3px;">Already open</button>
+      <button data-group="eta" data-flag="Y26" class="pfilter" style="background:transparent;color:#2a8b7a;border:1px solid #7cc4b3;padding:5px 12px;font-family:inherit;font-size:11px;cursor:pointer;border-radius:3px;">2026</button>
+      <button data-group="eta" data-flag="Y27" class="pfilter" style="background:transparent;color:#2a8b7a;border:1px solid #7cc4b3;padding:5px 12px;font-family:inherit;font-size:11px;cursor:pointer;border-radius:3px;">2027</button>
+      <button data-group="eta" data-flag="Y28" class="pfilter" style="background:transparent;color:#2a8b7a;border:1px solid #7cc4b3;padding:5px 12px;font-family:inherit;font-size:11px;cursor:pointer;border-radius:3px;">2028</button>
+    </div>
+  </div>
+  <div style="margin-top:10px;color:#6b8b85;font-size:10px;font-style:italic;">Within a group, filters combine with OR. Across groups, they combine with AND.</div>
 </div>
 
 <div style="background:#ffffff;border:1px solid #d8e8e3;border-radius:4px;overflow:hidden;">
@@ -234,7 +266,9 @@
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:18px;">
   
   <div>
-    <div style="font-size:11px;font-weight:500;color:#1a1a1a;margin-bottom:10px;padding:6px 12px;background:#eef6f3;border-radius:3px;display:inline-block;">Kuwait · The Avenues Kuwait + Aventura Mall (Q3 2026) + Souk Sabah (Q1 2028)</div>
+    <div style="font-size:11px;font-weight:500;color:#1a1a1a;margin-bottom:10px;padding:6px 12px;background:#eef6f3;border-radius:3px;display:inline-block;">Kuwait</div>
+    <div id="map-kuwait" style="width:100%;height:420px;border-radius:4px;border:1px solid #d8e8e3;margin-bottom:6px;background:#f4faf8;"></div>
+    <div style="font-size:10px;color:#6b8b85;margin-bottom:14px;font-style:italic;">Teal = Mabanee · Red = competitor · click any pin for the name. Al Khiran Mall (Tamdeen) is pinned ~35 km south of the default view — scroll down on the map to find it.</div>
     <table style="width:100%;font-size:12px;border-collapse:collapse;">
       <thead><tr style="color:#6b8b85;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;">
         <th style="text-align:left;padding:6px 0;font-weight:500;">Existing Mall</th>
@@ -242,22 +276,26 @@
         <th style="text-align:left;padding:6px 0 6px 10px;font-weight:500;">Positioning</th>
       </tr></thead>
       <tbody>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">360 Mall</td><td style="padding:8px 0 8px 10px;color:#a8650f;font-weight:500;">Tamdeen</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Mixed-use sports + retail · 6th Ring</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Al Kout Mall</td><td style="padding:8px 0 8px 10px;color:#a8650f;font-weight:500;">Tamdeen</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Waterfront destination · 100K sqm</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Al Khiran Mall</td><td style="padding:8px 0 8px 10px;color:#a8650f;font-weight:500;">Tamdeen</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Hybrid outlet · 80K sqm · Sabah Al Ahmad</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Sama Mall (3 locations)</td><td style="padding:8px 0 8px 10px;color:#a8650f;font-weight:500;">Tamdeen</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Community centers · neighborhood</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">The Warehouse Mall</td><td style="padding:8px 0 8px 10px;color:#a8650f;font-weight:500;">Tamdeen</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Premium mainstream</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Al Hamra Tower + Mall</td><td style="padding:8px 0 8px 10px;">Al Hamra RE</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Luxury · Kuwait City</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Al Assima Mall</td><td style="padding:8px 0 8px 10px;">Salhia RE</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Mixed-use · JW Marriott link</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Symphony Mall</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Salmiya · luxury positioning</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Marina Mall</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Salmiya waterfront</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Al Manshar (Fahaheel)</td><td style="padding:8px 0 8px 10px;">Tamdeen</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Mixed-use + Rotana hotel</td></tr>
+        <tr style="border-top:1px solid #eef6f3;background:#f4faf8;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#2a8b7a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">M1</span>The Avenues Kuwait</td><td style="padding:8px 0 8px 10px;color:#2a8b7a;font-weight:500;">Mabanee</td><td style="padding:8px 0 8px 10px;color:#3a4a45;">Operating · flagship · Al Rai</td></tr>
+        <tr style="border-top:1px solid #eef6f3;background:#f4faf8;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#2a8b7a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">M2</span>Aventura Mall</td><td style="padding:8px 0 8px 10px;color:#2a8b7a;font-weight:500;">Mabanee</td><td style="padding:8px 0 8px 10px;color:#3a4a45;">Q3 2026 · 108K sqm GLA · Jaber Al Ahmad</td></tr>
+        <tr style="border-top:1px solid #eef6f3;background:#f4faf8;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#e8efed;color:#9aada6;border-radius:50%;font-size:10px;font-weight:500;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">—</span>Souk Sabah</td><td style="padding:8px 0 8px 10px;color:#2a8b7a;font-weight:500;">Mabanee</td><td style="padding:8px 0 8px 10px;color:#3a4a45;">Q1 2028 · 23K sqm GLA · traditional retail + hotel</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">1</span>360 Mall</td><td style="padding:8px 0 8px 10px;color:#a8650f;font-weight:500;">Tamdeen</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Mixed-use sports + retail · 6th Ring</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">2</span>Al Kout Mall</td><td style="padding:8px 0 8px 10px;color:#a8650f;font-weight:500;">Tamdeen</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Waterfront destination · 100K sqm</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">3</span>Al Khiran Mall</td><td style="padding:8px 0 8px 10px;color:#a8650f;font-weight:500;">Tamdeen</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Hybrid outlet · 80K sqm · Sabah Al Ahmad</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#e8efed;color:#9aada6;border-radius:50%;font-size:10px;font-weight:500;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">—</span>Sama Mall (3 locations)</td><td style="padding:8px 0 8px 10px;color:#a8650f;font-weight:500;">Tamdeen</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Community centers · neighborhood</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">4</span>The Warehouse Mall</td><td style="padding:8px 0 8px 10px;color:#a8650f;font-weight:500;">Tamdeen</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Premium mainstream</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">5</span>Al Hamra Tower + Mall</td><td style="padding:8px 0 8px 10px;">Al Hamra RE</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Luxury · Kuwait City</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">6</span>Al Assima Mall</td><td style="padding:8px 0 8px 10px;">Salhia RE</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Mixed-use · JW Marriott link</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">7</span>Marina Mall</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Salmiya waterfront</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">8</span>Fanar Mall</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Salmiya · Salem Al Mubarak retail strip</td></tr>
       </tbody>
     </table>
   </div>
   
   <div>
-    <div style="font-size:11px;font-weight:500;color:#1a1a1a;margin-bottom:10px;padding:6px 12px;background:#eef6f3;border-radius:3px;display:inline-block;">Bahrain · The Avenues Bahrain Phase I + II (operating)</div>
+    <div style="font-size:11px;font-weight:500;color:#1a1a1a;margin-bottom:10px;padding:6px 12px;background:#eef6f3;border-radius:3px;display:inline-block;">Bahrain</div>
+    <div id="map-bahrain" style="width:100%;height:420px;border-radius:4px;border:1px solid #d8e8e3;margin-bottom:6px;background:#f4faf8;"></div>
+    <div style="font-size:10px;color:#6b8b85;margin-bottom:14px;font-style:italic;">Teal = Mabanee · Red = competitor · click any pin for the name.</div>
     <table style="width:100%;font-size:12px;border-collapse:collapse;">
       <thead><tr style="color:#6b8b85;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;">
         <th style="text-align:left;padding:6px 0;font-weight:500;">Existing Mall</th>
@@ -265,16 +303,16 @@
         <th style="text-align:left;padding:6px 0 6px 10px;font-weight:500;">Positioning</th>
       </tr></thead>
       <tbody>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">City Centre Bahrain</td><td style="padding:8px 0 8px 10px;color:#9c2a2a;font-weight:500;">Majid Al Futtaim</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Largest · 340 stores · 13.5M visitors</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Seef Mall (Seef + Muharraq)</td><td style="padding:8px 0 8px 10px;color:#a8650f;font-weight:500;">Seef Properties</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">370+ stores · 135K sqm · oldest mega</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Marassi Galleria</td><td style="padding:8px 0 8px 10px;">Eagle Hills · Diyar</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">200K sqm · region's first beachside</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Moda Mall</td><td style="padding:8px 0 8px 10px;">BWTC</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Luxury · Chanel, Gucci, Prada</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Dragon City</td><td style="padding:8px 0 8px 10px;">CMEITP</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">700+ units · 50K sqm wholesale</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Al Liwan</td><td style="padding:8px 0 8px 10px;color:#a8650f;font-weight:500;">Seef Properties</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Open-air · 120 units · Hamala</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Bahrain Mall</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">70K sqm · 480K visitors/month</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Al Aali Mall</td><td style="padding:8px 0 8px 10px;">Haji Hassan</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Upscale · 52K sqm · Seef</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Lagoon Mall</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Indoor water park · waterfront</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Juffair Mall</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">5-floor · LuLu anchor · Juffair</td></tr>
+        <tr style="border-top:1px solid #eef6f3;background:#f4faf8;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#2a8b7a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">M</span>The Avenues Bahrain (Phase I + II)</td><td style="padding:8px 0 8px 10px;color:#2a8b7a;font-weight:500;">Mabanee</td><td style="padding:8px 0 8px 10px;color:#3a4a45;">Operating · 84K sqm combined · Bahrain Bay</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">1</span>City Centre Bahrain</td><td style="padding:8px 0 8px 10px;color:#9c2a2a;font-weight:500;">Majid Al Futtaim</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Largest · 340 stores · 13.5M visitors</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">2</span>Seef Mall (Seef + Muharraq)</td><td style="padding:8px 0 8px 10px;color:#a8650f;font-weight:500;">Seef Properties</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">370+ stores · 135K sqm · oldest mega</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">3</span>Marassi Galleria</td><td style="padding:8px 0 8px 10px;">Eagle Hills · Diyar</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">200K sqm · region's first beachside</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">4</span>Moda Mall</td><td style="padding:8px 0 8px 10px;">BWTC</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Luxury · Chanel, Gucci, Prada</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">5</span>Al Liwan</td><td style="padding:8px 0 8px 10px;color:#a8650f;font-weight:500;">Seef Properties</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Open-air · 120 units · Hamala</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">6</span>Bahrain Mall</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">70K sqm · 480K visitors/month</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">7</span>Al Aali Mall</td><td style="padding:8px 0 8px 10px;">Haji Hassan</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Upscale · 52K sqm · Seef</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">8</span>Lagoon Mall</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Indoor water park · waterfront</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">9</span>Juffair Mall</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">5-floor · LuLu anchor · Juffair</td></tr>
       </tbody>
     </table>
   </div>
@@ -284,7 +322,9 @@
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
   
   <div>
-    <div style="font-size:11px;font-weight:500;color:#1a1a1a;margin-bottom:10px;padding:6px 12px;background:#eef6f3;border-radius:3px;display:inline-block;">Riyadh · The Avenues Riyadh opens Q1 2027</div>
+    <div style="font-size:11px;font-weight:500;color:#1a1a1a;margin-bottom:10px;padding:6px 12px;background:#eef6f3;border-radius:3px;display:inline-block;">Riyadh</div>
+    <div id="map-riyadh" style="width:100%;height:420px;border-radius:4px;border:1px solid #d8e8e3;margin-bottom:6px;background:#f4faf8;"></div>
+    <div style="font-size:10px;color:#6b8b85;margin-bottom:14px;font-style:italic;">Teal = Mabanee · Red = competitor · click any pin for the name.</div>
     <table style="width:100%;font-size:12px;border-collapse:collapse;">
       <thead><tr style="color:#6b8b85;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;">
         <th style="text-align:left;padding:6px 0;font-weight:500;">Existing Mall</th>
@@ -292,22 +332,25 @@
         <th style="text-align:left;padding:6px 0 6px 10px;font-weight:500;">Positioning</th>
       </tr></thead>
       <tbody>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Al Nakheel Mall</td><td style="padding:8px 0 8px 10px;color:#9c2a2a;font-weight:500;">Cenomi</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Largest in Riyadh · 200+ stores</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">U Walk Riyadh</td><td style="padding:8px 0 8px 10px;color:#9c2a2a;font-weight:500;">Cenomi</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Pedestrian street format</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Kingdom Centre Mall</td><td style="padding:8px 0 8px 10px;">Kingdom Holding</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Luxury · Chanel, Dior, LV</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Riyadh Park Mall</td><td style="padding:8px 0 8px 10px;">Al Khozama</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">King Abdullah Financial District</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Panorama Mall</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">200+ stores · Takhassusi</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Granada Center</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">235 stores · Eastern Ring Rd</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Hayat Mall</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">450+ stores · 226K sqm</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Roshn Front (ex-Riyadh Front)</td><td style="padding:8px 0 8px 10px;">Roshn (PIF)</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Open-air lifestyle</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Riyadh Gallery</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">King Fahd District</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;color:#9c2a2a;font-weight:500;">Jawharat Riyadh (planned)</td><td style="padding:8px 0 8px 10px;color:#9c2a2a;font-weight:500;">Cenomi · Westfield</td><td style="padding:8px 0 8px 10px;color:#9c2a2a;">Q1 2027 · direct head-to-head</td></tr>
+        <tr style="border-top:1px solid #eef6f3;background:#f4faf8;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#2a8b7a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">M</span>The Avenues Riyadh + Riyadh Towers</td><td style="padding:8px 0 8px 10px;color:#2a8b7a;font-weight:500;">Mabanee</td><td style="padding:8px 0 8px 10px;color:#3a4a45;">Q1 2027–2028 · 361K sqm GLA + 5 mixed-use towers</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">1</span>Al Nakheel Mall</td><td style="padding:8px 0 8px 10px;color:#9c2a2a;font-weight:500;">Cenomi</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Largest in Riyadh · 200+ stores</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">2</span>U Walk Riyadh</td><td style="padding:8px 0 8px 10px;color:#9c2a2a;font-weight:500;">Cenomi</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Pedestrian street format</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">3</span>Kingdom Centre Mall</td><td style="padding:8px 0 8px 10px;">Kingdom Holding</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Luxury · Chanel, Dior, LV</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">4</span>Riyadh Park Mall</td><td style="padding:8px 0 8px 10px;">Al Khozama</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">King Abdullah Financial District</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">5</span>Panorama Mall</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">200+ stores · Takhassusi</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">6</span>Granada Center</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">235 stores · Eastern Ring Rd</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">7</span>Hayat Mall</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">450+ stores · 226K sqm</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">8</span>Roshn Front (ex-Riyadh Front)</td><td style="padding:8px 0 8px 10px;">Roshn (PIF)</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Open-air lifestyle</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">9</span>Riyadh Gallery</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">King Fahd District</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;color:#9c2a2a;font-weight:500;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">10</span>Jawharat Riyadh (planned)</td><td style="padding:8px 0 8px 10px;color:#9c2a2a;font-weight:500;">Cenomi · Westfield</td><td style="padding:8px 0 8px 10px;color:#9c2a2a;">Q1 2027 · direct head-to-head</td></tr>
       </tbody>
     </table>
   </div>
   
   <div>
-    <div style="font-size:11px;font-weight:500;color:#1a1a1a;margin-bottom:10px;padding:6px 12px;background:#eef6f3;border-radius:3px;display:inline-block;">Khobar · The Avenues Khobar opens Q1 2028</div>
+    <div style="font-size:11px;font-weight:500;color:#1a1a1a;margin-bottom:10px;padding:6px 12px;background:#eef6f3;border-radius:3px;display:inline-block;">Khobar</div>
+    <div id="map-khobar" style="width:100%;height:420px;border-radius:4px;border:1px solid #d8e8e3;margin-bottom:6px;background:#f4faf8;"></div>
+    <div style="font-size:10px;color:#6b8b85;margin-bottom:14px;font-style:italic;">Teal = Mabanee · Red = competitor · click any pin for the name.</div>
     <table style="width:100%;font-size:12px;border-collapse:collapse;">
       <thead><tr style="color:#6b8b85;font-size:10px;letter-spacing:0.5px;text-transform:uppercase;">
         <th style="text-align:left;padding:6px 0;font-weight:500;">Existing Mall</th>
@@ -315,17 +358,18 @@
         <th style="text-align:left;padding:6px 0 6px 10px;font-weight:500;">Positioning</th>
       </tr></thead>
       <tbody>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Al Rashid Mall (Khobar)</td><td style="padding:8px 0 8px 10px;">Al Rashid Group</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">650+ stores · largest in region</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Mall of Dhahran</td><td style="padding:8px 0 8px 10px;color:#9c2a2a;font-weight:500;">Cenomi</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Top mall Eastern Province</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Cenomi Nakheel Mall Dammam</td><td style="padding:8px 0 8px 10px;color:#9c2a2a;font-weight:500;">Cenomi</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">88K sqm · Al Athir</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Al Othaim Mall (Dammam)</td><td style="padding:8px 0 8px 10px;">Al Othaim</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">392+ stores · ship design</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">West Avenue Mall (Dammam)</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">88+ stores incl. Carrefour</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Dhahran Mall</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">100+ stores · ice skating</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Al Shatea Mall</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Gulf Road · waterfront</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Flammingo Park (ex-Venicia)</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">300+ stores · 50K sqm</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Dareen Mall</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">First IMAX in Dammam</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;">Marina Mall (Dammam)</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Waterfront positioning</td></tr>
-        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0;color:#9c2a2a;font-weight:500;">Jawharat Khobar (planned)</td><td style="padding:8px 0 8px 10px;color:#9c2a2a;font-weight:500;">Cenomi · Westfield</td><td style="padding:8px 0 8px 10px;color:#9c2a2a;">Q1 2028 · direct head-to-head</td></tr>
+        <tr style="border-top:1px solid #eef6f3;background:#f4faf8;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#2a8b7a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">M</span>The Avenues Khobar</td><td style="padding:8px 0 8px 10px;color:#2a8b7a;font-weight:500;">Mabanee</td><td style="padding:8px 0 8px 10px;color:#3a4a45;">Q1 2028 · 167K sqm GLA · 38% complete</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">1</span>Al Rashid Mall (Khobar)</td><td style="padding:8px 0 8px 10px;">Al Rashid Group</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">650+ stores · largest in region</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">2</span>Mall of Dhahran</td><td style="padding:8px 0 8px 10px;color:#9c2a2a;font-weight:500;">Cenomi</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Top mall Eastern Province</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">3</span>Cenomi Nakheel Mall Dammam</td><td style="padding:8px 0 8px 10px;color:#9c2a2a;font-weight:500;">Cenomi</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">88K sqm · Al Athir</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">4</span>Al Othaim Mall (Dammam)</td><td style="padding:8px 0 8px 10px;">Al Othaim</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">392+ stores · ship design</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">5</span>West Avenue Mall (Dammam)</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">88+ stores incl. Carrefour</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">6</span>Dhahran Mall</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">100+ stores · ice skating</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">7</span>Al Shatea Mall</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Gulf Road · waterfront</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#e8efed;color:#9aada6;border-radius:50%;font-size:10px;font-weight:500;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">—</span>Flammingo Park (ex-Venicia)</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">300+ stores · 50K sqm</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">8</span>Dareen Mall</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">First IMAX in Dammam</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">9</span>Marina Mall (Dammam)</td><td style="padding:8px 0 8px 10px;">Private</td><td style="padding:8px 0 8px 10px;color:#6b8b85;">Waterfront positioning</td></tr>
+        <tr style="border-top:1px solid #eef6f3;"><td style="padding:8px 0 8px 26px;text-indent:-26px;color:#9c2a2a;font-weight:500;"><span style="display:inline-block;width:18px;height:18px;text-indent:0;background:#9c2a2a;color:#ffffff;border-radius:50%;font-size:10px;font-weight:600;line-height:18px;text-align:center;margin-right:8px;vertical-align:middle;">10</span>Jawharat Khobar (planned)</td><td style="padding:8px 0 8px 10px;color:#9c2a2a;font-weight:500;">Cenomi · Westfield</td><td style="padding:8px 0 8px 10px;color:#9c2a2a;">Q1 2028 · direct head-to-head</td></tr>
       </tbody>
     </table>
   </div>
@@ -410,35 +454,47 @@
 
 </div>
 
-<div style="background:#2a8b7a;color:#c8e6dd;padding:12px 24px;font-size:10px;display:flex;justify-content:space-between;letter-spacing:0.5px;">
-  <div>Sources: Mabanee Annual Report 2025 · Boursa Kuwait · MSCI · S&amp;P Global · Cenomi 2024 Annual Report · Tamdeen Group</div>
-  <div style="color:#ffffff;font-weight:500;">Strategy Workspace</div>
+<div style="background:#2a8b7a;color:#c8e6dd;padding:12px 24px;font-size:10px;display:flex;justify-content:flex-end;letter-spacing:0.5px;">
+  <div style="color:#ffffff;font-weight:500;">Strategic Landscape · v1.0.0 · May 26</div>
 </div>
 
 <script>
 (function(){
   var projects = [
-    {n:'The Avenues',g:'Kuwait',t:'Shopping mall',s:'Operating · 98% occupancy',c:'#2a8b7a',eta:'—',exp:'Flagship',f:['KWT','OPS']},
-    {n:'Waldorf Astoria Kuwait',g:'Kuwait',t:'Hotel',s:'Operating',c:'#2a8b7a',eta:'—',exp:'200 suites',f:['KWT','OPS']},
-    {n:'Hilton Garden Inn Kuwait',g:'Kuwait',t:'Hotel',s:'Operating',c:'#2a8b7a',eta:'—',exp:'385 rooms',f:['KWT','OPS']},
-    {n:'The Avenues Bahrain Phase I',g:'Bahrain',t:'Shopping mall',s:'Operating · 98% occupancy',c:'#2a8b7a',eta:'—',exp:'42K sqm',f:['BHR','OPS']},
-    {n:'The Avenues Bahrain Phase II',g:'Bahrain',t:'Shopping mall',s:'Opened Q4 2025',c:'#2a8b7a',eta:'Complete',exp:'+42K sqm',f:['BHR','OPS']},
-    {n:'Hilton Garden Inn Bahrain',g:'Bahrain',t:'Hotel',s:'Operating',c:'#2a8b7a',eta:'—',exp:'192 rooms',f:['BHR','OPS']},
-    {n:'Aventura Residences',g:'Kuwait',t:'Residential',s:'Construction',c:'#a8650f',eta:'Q1 2026',exp:'276 units',f:['KWT','DEV']},
-    {n:'Aventura Mall',g:'Kuwait',t:'Shopping mall',s:'90%+ complete',c:'#a8650f',eta:'Q3 2026',exp:'108K sqm GLA',f:['KWT','DEV']},
-    {n:'Plage 13 Resort',g:'Kuwait',t:'Hospitality resort',s:'Renovation',c:'#a8650f',eta:'Q4 2026',exp:'330 rooms',f:['KWT','DEV']},
-    {n:'The Avenues Riyadh',g:'Saudi Arabia',t:'Shopping mall',s:'Construction',c:'#a8650f',eta:'Q1 2027',exp:'361K sqm GLA',f:['KSA','DEV']},
-    {n:'The Avenues Riyadh Towers',g:'Saudi Arabia',t:'Mixed-use towers',s:'Construction',c:'#a8650f',eta:'Q1 2028',exp:'5 towers',f:['KSA','DEV']},
-    {n:'Souk Sabah',g:'Kuwait',t:'Traditional retail + hotel',s:'Construction',c:'#a8650f',eta:'Q1 2028',exp:'23K sqm GLA',f:['KWT','DEV']},
-    {n:'The Avenues Khobar',g:'Saudi Arabia',t:'Shopping mall',s:'38% complete',c:'#9c2a2a',eta:'Q1 2028',exp:'167K sqm GLA',f:['KSA','DEV']}
+    {n:'The Avenues',g:'Kuwait',t:'Shopping mall',s:'Operating · 98% occupancy',c:'#2a8b7a',eta:'—',exp:'Flagship',f:['KWT','OPS','MALL','DONE']},
+    {n:'Waldorf Astoria Kuwait',g:'Kuwait',t:'Hotel',s:'Operating',c:'#2a8b7a',eta:'—',exp:'200 suites',f:['KWT','OPS','HOTEL','DONE']},
+    {n:'Hilton Garden Inn Kuwait',g:'Kuwait',t:'Hotel',s:'Operating',c:'#2a8b7a',eta:'—',exp:'385 rooms',f:['KWT','OPS','HOTEL','DONE']},
+    {n:'The Avenues Bahrain Phase I',g:'Bahrain',t:'Shopping mall',s:'Operating · 98% occupancy',c:'#2a8b7a',eta:'—',exp:'42K sqm',f:['BHR','OPS','MALL','DONE']},
+    {n:'The Avenues Bahrain Phase II',g:'Bahrain',t:'Shopping mall',s:'Opened Q4 2025',c:'#2a8b7a',eta:'Complete',exp:'+42K sqm',f:['BHR','OPS','MALL','DONE']},
+    {n:'Hilton Garden Inn Bahrain',g:'Bahrain',t:'Hotel',s:'Operating',c:'#2a8b7a',eta:'—',exp:'192 rooms',f:['BHR','OPS','HOTEL','DONE']},
+    {n:'Aventura Residences',g:'Kuwait',t:'Residential',s:'Construction',c:'#a8650f',eta:'Q1 2026',exp:'276 units',f:['KWT','DEV','RES','Y26']},
+    {n:'Aventura Mall',g:'Kuwait',t:'Shopping mall',s:'90%+ complete',c:'#a8650f',eta:'Q3 2026',exp:'108K sqm GLA',f:['KWT','DEV','MALL','Y26']},
+    {n:'Plage 13 Resort',g:'Kuwait',t:'Hospitality resort',s:'Renovation',c:'#a8650f',eta:'Q4 2026',exp:'330 rooms',f:['KWT','DEV','HOTEL','Y26']},
+    {n:'The Avenues Riyadh',g:'Saudi Arabia',t:'Shopping mall',s:'Construction',c:'#a8650f',eta:'Q1 2027',exp:'361K sqm GLA',f:['KSA','DEV','MALL','Y27']},
+    {n:'The Avenues Riyadh Towers',g:'Saudi Arabia',t:'Mixed-use towers',s:'Construction',c:'#a8650f',eta:'Q1 2028',exp:'5 towers',f:['KSA','DEV','MIXED','Y28']},
+    {n:'Souk Sabah',g:'Kuwait',t:'Traditional retail + hotel',s:'Construction',c:'#a8650f',eta:'Q1 2028',exp:'23K sqm GLA',f:['KWT','DEV','MIXED','Y28']},
+    {n:'The Avenues Khobar',g:'Saudi Arabia',t:'Shopping mall',s:'38% complete',c:'#9c2a2a',eta:'Q1 2028',exp:'167K sqm GLA',f:['KSA','DEV','MALL','Y28']}
   ];
 
-  function renderPipeline(filter){
+  var activeFilters = {geo:{}, status:{}, type:{}, eta:{}};
+  function pmatches(p){
+    for(var g in activeFilters){
+      var keys = Object.keys(activeFilters[g]);
+      if(keys.length === 0) continue;
+      var hit = false;
+      for(var i=0;i<keys.length;i++){ if(p.f.indexOf(keys[i])!==-1){hit=true;break;} }
+      if(!hit) return false;
+    }
+    return true;
+  }
+  function renderPipeline(){
     var tb = document.getElementById('ptbody');
     if(!tb) return;
     tb.innerHTML = '';
+    var shown = 0;
     projects.forEach(function(p,i){
-      if(filter !== 'all' && p.f.indexOf(filter) === -1) return;
+      if(!pmatches(p)) return;
+      shown++;
       var tr = document.createElement('tr');
       tr.style.borderTop = '1px solid #eef6f3';
       if(i % 2 === 1) tr.style.background = '#fbfdfc';
@@ -450,6 +506,7 @@
         '<td style="padding:11px 16px;text-align:right;color:#6b8b85;">'+p.exp+'</td>';
       tb.appendChild(tr);
     });
+    var c = document.getElementById('pcount'); if(c) c.textContent = shown;
   }
 
   function switchTab(name){
@@ -475,22 +532,130 @@
     b.addEventListener('click', function(){ switchTab(this.getAttribute('data-tab')); });
   });
 
-  document.querySelectorAll('.pfilter').forEach(function(b){
+  function setFilterStyle(b, on){
+    if(on){ b.style.background = '#2a8b7a'; b.style.color = '#ffffff'; b.style.border = '1px solid #2a8b7a'; }
+    else  { b.style.background = 'transparent'; b.style.color = '#2a8b7a'; b.style.border = '1px solid #7cc4b3'; }
+  }
+  document.querySelectorAll('.pfilter[data-group]').forEach(function(b){
     b.addEventListener('click', function(){
-      document.querySelectorAll('.pfilter').forEach(function(x){
-        x.style.background = 'transparent';
-        x.style.color = '#2a8b7a';
-        x.style.border = '1px solid #7cc4b3';
-      });
-      this.style.background = '#2a8b7a';
-      this.style.color = '#ffffff';
-      this.style.border = '1px solid #2a8b7a';
-      renderPipeline(this.getAttribute('data-filter'));
+      var g = this.getAttribute('data-group'), f = this.getAttribute('data-flag');
+      if(activeFilters[g][f]){ delete activeFilters[g][f]; setFilterStyle(this, false); }
+      else { activeFilters[g][f] = 1; setFilterStyle(this, true); }
+      renderPipeline();
     });
   });
+  var rb = document.getElementById('pfreset');
+  if(rb) rb.addEventListener('click', function(){
+    activeFilters = {geo:{}, status:{}, type:{}, eta:{}};
+    document.querySelectorAll('.pfilter[data-group]').forEach(function(x){ setFilterStyle(x, false); });
+    renderPipeline();
+  });
 
-  renderPipeline('all');
+  renderPipeline();
 })();
 </script>
 
 </div>
+
+<script>
+window.initCatchmentMaps = function() {
+  var cities = {
+    kuwait: [
+      {n:'The Avenues Kuwait',         la:29.3032, lo:47.9360, l:'M1', m:true},
+      {n:'Aventura Mall',              la:29.3359, lo:47.7581, l:'M2', m:true},
+      {n:'360 Mall (Tamdeen)',         la:29.2676, lo:47.9929, l:'1'},
+      {n:'Al Kout Mall (Tamdeen)',     la:29.0784, lo:48.1387, l:'2'},
+      {n:'Al Khiran Mall (Tamdeen)',   la:28.6726, lo:48.3481, l:'3', nf:true},
+      {n:'The Warehouse Mall (Tamdeen)',la:29.0849, lo:48.1048, l:'4'},
+      {n:'Al Hamra Tower + Mall',      la:29.3791, lo:47.9933, l:'5'},
+      {n:'Al Assima Mall (Salhia)',    la:29.3739, lo:47.9867, l:'6'},
+      {n:'Marina Mall (Salmiya)',      la:29.3376, lo:48.0657, l:'7'},
+      {n:'Fanar Mall',                 la:29.3412, lo:48.0743, l:'8'}
+    ],
+    bahrain: [
+      {n:'The Avenues Bahrain',        la:26.2457, lo:50.5854, l:'M', m:true},
+      {n:'City Centre Bahrain (MAF)',  la:26.2333, lo:50.5533, l:'1'},
+      {n:'Seef Mall',                  la:26.2325, lo:50.5364, l:'2'},
+      {n:'Marassi Galleria',           la:26.3017, lo:50.6428, l:'3'},
+      {n:'Moda Mall (BWTC)',           la:26.2396, lo:50.5813, l:'4'},
+      {n:'Al Liwan (Hamala)',          la:26.1639, lo:50.4706, l:'5'},
+      {n:'Bahrain Mall',               la:26.2295, lo:50.5375, l:'6'},
+      {n:'Al Aali Mall',               la:26.2330, lo:50.5405, l:'7'},
+      {n:'Lagoon Mall (Amwaj)',        la:26.2911, lo:50.6653, l:'8'},
+      {n:'Juffair Mall',               la:26.2175, lo:50.6077, l:'9'}
+    ],
+    riyadh: [
+      {n:'The Avenues Riyadh',         la:24.8715, lo:46.5873, l:'M', m:true},
+      {n:'Al Nakheel Mall (Cenomi)',   la:24.7679, lo:46.7149, l:'1'},
+      {n:'U Walk Riyadh (Cenomi)',     la:24.7361, lo:46.6313, l:'2'},
+      {n:'Kingdom Centre Mall',        la:24.7112, lo:46.6734, l:'3'},
+      {n:'Riyadh Park Mall',           la:24.7566, lo:46.6294, l:'4'},
+      {n:'Panorama Mall',              la:24.6929, lo:46.6710, l:'5'},
+      {n:'Granada Center',             la:24.7811, lo:46.7298, l:'6'},
+      {n:'Hayat Mall',                 la:24.7428, lo:46.6798, l:'7'},
+      {n:'Roshn Front',                la:24.8385, lo:46.7323, l:'8'},
+      {n:'Riyadh Gallery',             la:24.7200, lo:46.7100, l:'9'},
+      {n:'Jawharat Riyadh (Cenomi)',   la:24.7908, lo:46.8103, l:'10'}
+    ],
+    khobar: [
+      {n:'The Avenues Khobar',         la:26.3332, lo:50.1759, l:'M', m:true},
+      {n:'Al Rashid Mall Khobar',      la:26.2900, lo:50.1804, l:'1'},
+      {n:'Mall of Dhahran (Cenomi)',   la:26.3063, lo:50.1710, l:'2'},
+      {n:'Cenomi Nakheel Mall Dammam', la:26.3916, lo:50.0376, l:'3'},
+      {n:'Al Othaim Mall Dammam',      la:26.4300, lo:50.1000, l:'4'},
+      {n:'West Avenue Mall Dammam',    la:26.3875, lo:50.0750, l:'5'},
+      {n:'Dhahran Mall',               la:26.3057, lo:50.1731, l:'6'},
+      {n:'Al Shatea Mall',             la:26.4548, lo:50.1210, l:'7'},
+      {n:'Dareen Mall',                la:26.4613, lo:50.0649, l:'8'},
+      {n:'Marina Mall Dammam',         la:26.4552, lo:50.1057, l:'9'},
+      {n:'Jawharat Khobar (Cenomi)',   la:26.2172, lo:50.1971, l:'10'}
+    ]
+  };
+  var pinPath = 'M 0 0 C -2 -20 -10 -22 -10 -30 A 10 10 0 1 1 10 -30 C 10 -22 2 -20 0 0 z';
+  var mapStyles = [
+    {featureType:'poi',     stylers:[{visibility:'off'}]},
+    {featureType:'transit', stylers:[{visibility:'off'}]}
+  ];
+  Object.keys(cities).forEach(function(name){
+    var el = document.getElementById('map-' + name);
+    if(!el) return;
+    var map = new google.maps.Map(el, {
+      mapTypeControl:false,
+      streetViewControl:false,
+      fullscreenControl:true,
+      gestureHandling:'cooperative',
+      styles: mapStyles
+    });
+    var bounds = new google.maps.LatLngBounds();
+    cities[name].forEach(function(p){
+      var pos = new google.maps.LatLng(p.la, p.lo);
+      if (!p.nf) bounds.extend(pos);
+      var marker = new google.maps.Marker({
+        position: pos,
+        map: map,
+        title: p.n,
+        zIndex: p.m ? 1000 : 1,
+        label: {text:p.l, color:'#ffffff', fontSize: p.m ? '12px' : '11px', fontWeight: p.m ? '700' : '600'},
+        icon: {
+          path: pinPath,
+          fillColor: p.m ? '#2a8b7a' : '#9c2a2a',
+          fillOpacity: 1,
+          strokeColor: '#ffffff',
+          strokeWeight: p.m ? 2 : 1.5,
+          scale: p.m ? 1.2 : 1,
+          labelOrigin: new google.maps.Point(0, -28)
+        }
+      });
+      var iw = new google.maps.InfoWindow({
+        content:'<div style="font-family:Helvetica Neue,Helvetica,Arial,sans-serif;font-size:12px;font-weight:500;color:#1a1a1a;padding:2px 4px;">'+p.n+'</div>'
+      });
+      marker.addListener('click', function(){ iw.open(map, marker); });
+    });
+    map.fitBounds(bounds, {top:40,right:40,bottom:40,left:40});
+  });
+};
+</script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWDS-_Ry0sppEuZAZe_Y9T4mr3kl_qM68&callback=initCatchmentMaps&loading=async"></script>
+
+</body>
+</html>
